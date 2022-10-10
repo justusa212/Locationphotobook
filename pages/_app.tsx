@@ -1,8 +1,22 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { AppProps } from "next/app";
+import Head from "next/head";
+import { ApolloProvider } from "@apollo/client";
+import { useApollo } from "src/apollo";
+import { AuthProvider } from "src/auth/useAuth";
+import "../styles/index.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }: AppProps) {
+  const client = useApollo();
+
+  return (
+    <AuthProvider>
+      <ApolloProvider client={client}>
+        <Head>
+          <title>Home Sweet Home</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Component {...pageProps} />
+      </ApolloProvider>
+    </AuthProvider>
+  )
 }
-
-export default MyApp
