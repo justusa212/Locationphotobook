@@ -9,7 +9,7 @@ import { SearchBox } from "./searchBox";
 
 interface IProps {
   setDataBounds: (bounds: string) => void;
-  snapshots: SnapshotsQuery_snapshots;
+  snapshots: SnapshotsQuery_snapshots[];
   highlightedId: string | null;
 }
 

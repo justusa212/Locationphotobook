@@ -59,8 +59,8 @@ export default function Home() {
           </div>
           <div className="w-1/2">
             <Map 
-            setDataBounds={setDataBounds} 
-            snapshots={lastData ? lastData.snapshots : []}/>
+              setDataBounds={setDataBounds}
+              snapshots={lastData ? lastData.snapshots : []} highlightedId={null}/>
           </div>
         </div>
       }
