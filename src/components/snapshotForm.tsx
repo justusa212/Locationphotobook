@@ -82,7 +82,7 @@ async function uploadImage(image: File,signature: string,timestamp: number): Pro
   return response.json();
 }
 
-export default function snapshotForm({snapshot}: IProps) {
+export default function SnapshotForm({snapshot}: IProps) {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [previewImage, setPreviewImage] = useState<string>();

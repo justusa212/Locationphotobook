@@ -42,7 +42,7 @@ function SnapshotData({ id }: { id: string }) {
     if (data && !data.snapshot)
       return <Layout main={<div>Unable to load snapshot</div>} />;
     if (user.uid !== data?.snapshot?.userId)
-      return <Layout main={<div>You don't have permission</div>} />;
+      return <Layout main={<div>You do not have permission</div>} />;
   
     return <Layout main={<SnapshotForm snapshot={data.snapshot} />} />;
   }
